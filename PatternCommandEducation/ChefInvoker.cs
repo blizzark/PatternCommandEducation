@@ -1,16 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace PatternCommandEducation
+﻿namespace PatternCommandEducation
 {
     public class ChefInvoker
     {
-        private ICommand? _command;
+        private List<ICommand>? _command;
 
-        public void SetCommand(ICommand command)
+        public void SetCommand(List<ICommand> command)
         {
             _command = command;
         }
@@ -18,17 +12,15 @@ namespace PatternCommandEducation
         public void SendСommand()
         {
             if (_command != null)
-            {
-                _command.Execute();
-            }
+                foreach (ICommand command in _command)
+                    command.Execute();
         }
 
         public void CanselСommand()
         {
             if (_command != null)
-            {
-                _command.Undo();
-            }
+                foreach (ICommand command in _command)
+                    command.Undo();
         }
     }
 }

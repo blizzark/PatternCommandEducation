@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace PatternCommandEducation
+﻿namespace PatternCommandEducation
 {
     public class Washer
     {
@@ -16,5 +10,26 @@ namespace PatternCommandEducation
         {
             Console.WriteLine("Мойщик закончил мыть посуду");
         }
+
+        public Washer RunInShop()
+        {
+            Console.WriteLine("Мойщик побежал в магазин");
+            Console.WriteLine("Мойщик выбирает средство для мытья посуды");
+           return this;
+          
+        }
+
+        public void BuyChemistry()
+        {
+            Console.WriteLine("Мойщик покупает средство");
+        }
+
+        public void RunInRestoran()
+        {
+            Console.WriteLine("Мойщик бежит обратно");
+            Console.WriteLine("Мойщик прибежал в магазин");
+        }
+
+
     }
 }
