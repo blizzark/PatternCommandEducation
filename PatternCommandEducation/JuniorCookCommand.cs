@@ -3,20 +3,23 @@
     public class JuniorCookCommand : ICommand
     {
         private JuniorCook _juniorCook;
-
-        public JuniorCookCommand(string name)
+        private Queue<string>? _order;
+        public JuniorCookCommand(string name, Queue<string> order)
         {
             _juniorCook = new JuniorCook(name);
-        }
-        public void SetCommand(JuniorCook juniorCook)
-        {
-            _juniorCook = juniorCook;
+            _order = order;
         }
 
         public void Execute()
         {
             if (_juniorCook != null)
-                _juniorCook.StartCooking();
+            {
+                while(_order != null) // надо делать lock, походу
+                {
+                    _juniorCook.StartCooking(_order.Dequeue());
+                }
+            }
+              
         }
 
         public void Undo()
