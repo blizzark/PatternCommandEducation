@@ -14,7 +14,7 @@
         {
             if (_juniorCook != null)
             {
-                while(_order != null) // надо делать lock, походу
+                while(_order?.Count > 0) 
                 {
                     _juniorCook.StartCooking(_order.Dequeue());
                 }

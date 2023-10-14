@@ -4,7 +4,7 @@ public class Program
 {
     static void Main()
     {
-        var _concreteOrder = new List<string> { "Карбонара", "Пицца", "Суши", "Бургер", "Шаверма", "Шаверма" };
+        var _concreteOrder = new List<string> { "Карбонара", "Пицца", "Суши", "Бургер", "Шаверма с курицей", "Шаверма с говядиной" };
         Queue<string> _order = new Queue<string>(_concreteOrder);
         Console.WriteLine("Начало рабочего дня на кухне");
         Washer washer = new Washer(); // создал мойщика. Может содержать кучу методов
