@@ -10,7 +10,7 @@
         }
         public void StartCooking(string? dish)
         {
-            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.ForegroundColor = ConsoleColor.Yellow; // лучше в отдельный метод, т.к. может что-то прийти в момент исполнения, но не суть сейчас
             Console.WriteLine($"Младший повар {Name} начал готовку блюда: {dish}");
             Thread.Sleep((new Random()).Next(1000, 3000));
             Console.ForegroundColor = ConsoleColor.Green;

@@ -10,6 +10,7 @@ public class Program
         Washer washer = new Washer(); // создал мойщика. Может содержать кучу методов
         List<ICommand> commands = new List<ICommand>() {
         new WasherCommand(washer), // прослойка в виде того, что именно мойщик делает (собирает методы в 2 команды (старта и отмена)). Реализация интерфейса
+        new WaherRunForChemistryCommand(washer),
         new JuniorCookCommand("Stive",_order), // прослойка для младшего повара. Повар создаётся внутри (можно и снаружи)
         new JuniorCookCommand("Tom", _order),
         new JuniorCookCommand("Bob", _order)

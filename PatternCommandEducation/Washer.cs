@@ -14,8 +14,10 @@
         public Washer RunInShop()
         {
             Console.WriteLine("Мойщик побежал в магазин");
+            Thread.Sleep(1000);
             Console.WriteLine("Мойщик выбирает средство для мытья посуды");
-           return this;
+            Thread.Sleep(1000);
+            return this;
           
         }
 
@@ -27,7 +29,7 @@
         public void RunInRestoran()
         {
             Console.WriteLine("Мойщик бежит обратно");
-            Console.WriteLine("Мойщик прибежал в магазин");
+            Console.WriteLine("Мойщик прибежал в ресторан");
         }
 
 
